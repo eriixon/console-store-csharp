@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+BCW.ConsoleStore.Front/bin
+BCW.ConsoleStore.Front/obj
