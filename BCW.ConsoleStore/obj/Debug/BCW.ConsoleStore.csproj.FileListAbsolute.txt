@@ -1,0 +1,5 @@
+E:\mpp\bcw\BCW.ConsoleStore.Front\BCW.ConsoleStore\bin\Debug\BCW.ConsoleStore.dll
+E:\mpp\bcw\BCW.ConsoleStore.Front\BCW.ConsoleStore\bin\Debug\BCW.ConsoleStore.pdb
+E:\mpp\bcw\BCW.ConsoleStore.Front\BCW.ConsoleStore\obj\Debug\BCW.ConsoleStore.csprojResolveAssemblyReference.cache
+E:\mpp\bcw\BCW.ConsoleStore.Front\BCW.ConsoleStore\obj\Debug\BCW.ConsoleStore.dll
+E:\mpp\bcw\BCW.ConsoleStore.Front\BCW.ConsoleStore\obj\Debug\BCW.ConsoleStore.pdb
