@@ -16,7 +16,43 @@ namespace BCW.ConsoleStore.Front
             Name = Console.ReadLine().ToString();
             Console.WriteLine("What is your budget?");
             Budget = Decimal.Parse(Console.ReadLine());
-            Console.WriteLine("Hello {0} with {1:c}", Name, Budget);
+        }
+        public void BuyItem(Store store)
+        {
+            Console.WriteLine("What do you like to buy. You have {0}", Budget);
+            var itemToBuy = store.GetItemByNameStore(Console.ReadLine().ToString().ToUpper());
+            if (itemToBuy == null) Console.WriteLine("Sorry, we don't have it");
+            else
+            {
+                if (itemToBuy.Price < Budget)
+                {
+                    store.AddItemToCart(itemToBuy);
+                    store.RemoveItemFromStore(itemToBuy);
+                    Budget -= itemToBuy.Price;
+                    Console.WriteLine();
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\n***Sorry, you don't have enought money***");
+                    Console.WriteLine();
+                    Console.ResetColor();
+                }
+            }
+        }
+
+        public void ReturnItem(Store store)
+        {
+            Console.WriteLine("What do you like to return? You have {0}", Budget);
+            var itemToReturn = store.GetItemByNameCart(Console.ReadLine().ToString().ToUpper());
+            if (itemToReturn == null) Console.WriteLine("Sorry, you don't have it");
+            else
+            {
+                store.AddItemToStore(itemToReturn);
+                store.RemoveItemFromCart(itemToReturn);
+                Budget += itemToReturn.Price;
+                Console.WriteLine();
+            }
         }
     }
 }

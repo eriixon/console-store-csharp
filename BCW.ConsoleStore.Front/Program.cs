@@ -8,31 +8,53 @@ namespace BCW.ConsoleStore.Front
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Store store = new Store("Bills' Gun");
-            User user = new User();            
+            User user = new User();
+            Store store = new Store("Bills' Gun",user.Name);
+            AddStoreItems(store);
 
             bool running = true;
             while (running)
             {
-                Console.ReadLine();
-                running = false;
+                store.ViewItems();
+                store.ViewCart();
+                store.CalculateCartTotal();
+                StoreMenu();
+                string choice = Console.ReadLine().ToString().ToUpper();
+                switch (choice)
+                {
+                    case "BUY":
+                        user.BuyItem(store);
+                        break;
+                    case "RETURN":
+                        user.ReturnItem(store);
+                        break;
+                    case "QUIT":
+                        Console.WriteLine("Thank you for visiting {0} store", store.Name);
+                        Console.ReadLine();
+                        running = false;
+                        break;
+                    default:
+                        Console.WriteLine("Sorry, we don't have it");
+                        break;
+                }
             }
-
-
-            //Item pick = new Item("Old Rusty", "A well worn pick it doesn't look like this would last long", 20);
-            //Item shield = new Item("Knight's Shield", "A nice looking shield with an unknown emblem", 200);
-
-            //willysEmporium.AddItemToStore(pick);
-            //willysEmporium.AddItemToStore(shield);
-
-
-            //    willysEmporium.ViewItems();
-            //    var item = willysEmporium.GetItemByName("Old Rusty");
-            //    willysEmporium.AddItemToCart(item);
-            //    willysEmporium.ViewCart();
-            //    willysEmporium.CalculateCartTotal();
         }
+        public static void StoreMenu()
+        {
+            Console.WriteLine("What do you like to do?");
+            Console.WriteLine("If you want to buy something - input 'buy'");
+            Console.WriteLine("If you want to return something - input 'retun'");
+            Console.WriteLine("If you want to leave - input 'quit'");
+        }
+        public static void AddStoreItems(Store store)
+        {
+            store.AddItemToStore(new Item("Gun", "10 mm semiato Zombi Punisher", 50));
+            store.AddItemToStore(new Item("Shotgun", "12 Gauge Zombi Destroyer", 150));
+            store.AddItemToStore(new Item("Rifle", "7.62x39mm Caliber Freedom Maker", 100));
+            store.AddItemToStore(new Item("Axe", "Old Friend", 25));
+        }
+
     }
 }

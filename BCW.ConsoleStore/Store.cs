@@ -11,10 +11,11 @@ namespace BCW.ConsoleStore
         public List<Item> Items = new List<Item>();
         public string Name { get; private set; }
         // Store constructor
-        public Store(string name)
+        public Store(string name, string userName)
         {
             Name = name;
-            Console.WriteLine("Welcome to {0} Store", Name);
+            Console.WriteLine("********************************");
+            Console.WriteLine("Welcome {1} to {0} Store", Name, userName);
         }
         // This method will allow you to add an item to the List of Items
         public void AddItemToStore(Item item)
@@ -43,7 +44,10 @@ namespace BCW.ConsoleStore
         // This method should calculate the total price of the items in the cart
         public void CalculateCartTotal()
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Total price of the cart is {0}", cart.Sum(item => item.Price));
+            Console.WriteLine();
+            Console.ResetColor();
         }
         // Okay now we need an interface that a user can interact with.You will need to write out the following methods still in the Store class so we can actually build an application.
         public void ViewItems()
@@ -59,11 +63,19 @@ namespace BCW.ConsoleStore
             DisplayItemList(cart);
         }
 
-        public Item GetItemByName(string name)
+        public Item GetItemByName(List<Item> list, string name)
         {
             // This method should search the given list of items for an item by its name
             // If the item is found return the Item. You could handle case sensitivity here
-            return Items.FirstOrDefault(item => item.Name.ToLower() == name.ToLower());
+            return list.FirstOrDefault(item => item.Name.ToLower() == name.ToLower());
+        }
+        public Item GetItemByNameStore(string name)
+        {
+            return GetItemByName(Items, name);
+        }
+        public Item GetItemByNameCart(string name)
+        {
+            return GetItemByName(cart, name);
         }
 
         private void DisplayItemList (List<Item> list)
