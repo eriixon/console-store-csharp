@@ -13,21 +13,23 @@ namespace BCW.ConsoleStore.Front
             User user = new User();
             Store store = new Store("Bills' Gun",user.Name);
             AddStoreItems(store);
+            store.ViewItems();
 
             bool running = true;
             while (running)
             {
-                store.ViewItems();
-                store.ViewCart();
-                store.CalculateCartTotal();
                 StoreMenu();
                 string choice = Console.ReadLine().ToString().ToUpper();
                 switch (choice)
                 {
                     case "BUY":
+                        store.ViewItems();
                         user.BuyItem(store);
+                        store.ViewCart();
+                        store.CalculateCartTotal();
                         break;
                     case "RETURN":
+                        store.ViewCart();
                         user.ReturnItem(store);
                         break;
                     case "QUIT":
@@ -44,9 +46,7 @@ namespace BCW.ConsoleStore.Front
         public static void StoreMenu()
         {
             Console.WriteLine("What do you like to do?");
-            Console.WriteLine("If you want to buy something - input 'buy'");
-            Console.WriteLine("If you want to return something - input 'retun'");
-            Console.WriteLine("If you want to leave - input 'quit'");
+            Console.WriteLine("If you want to buy something - input 'buy', to return - input 'retun', or you want to leave - input 'quit'");
             Console.WriteLine();
         }
         public static void AddStoreItems(Store store)

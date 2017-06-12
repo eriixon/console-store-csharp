@@ -6,3 +6,4 @@ C:\Projects\VS207\console-store-csharp\BCW.ConsoleStore\bin\Debug\BCW.ConsoleSto
 C:\Projects\VS207\console-store-csharp\BCW.ConsoleStore\bin\Debug\BCW.ConsoleStore.pdb
 C:\Projects\VS207\console-store-csharp\BCW.ConsoleStore\obj\Debug\BCW.ConsoleStore.dll
 C:\Projects\VS207\console-store-csharp\BCW.ConsoleStore\obj\Debug\BCW.ConsoleStore.pdb
+E:\mpp\bcw\BCW.ConsoleStore.Front\BCW.ConsoleStore\obj\Debug\BCW.ConsoleStore.csprojResolveAssemblyReference.cache
