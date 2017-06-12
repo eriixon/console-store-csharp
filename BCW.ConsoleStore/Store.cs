@@ -13,8 +13,8 @@ namespace BCW.ConsoleStore
         {
             Name = name;
             Console.WriteLine("********************************");
-            Console.WriteLine("Welcome {1} to {0} Store", Name, userName);
-            Console.WriteLine();
+            Console.WriteLine($"Welcome {Name} to {userName} Store");
+            Console.WriteLine("********************************");
         }
         // This method will allow you to add an item to the List of Items
         public void AddItemToStore(Item item)
@@ -44,21 +44,20 @@ namespace BCW.ConsoleStore
         public void CalculateCartTotal()
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Total price of the cart is {0}", cart.Sum(item => item.Price));
-            Console.WriteLine();
+            Console.WriteLine($"Total price of the cart is {cart.Sum(item => item.Price)}\r\n");
             Console.ResetColor();
         }
         // Okay now we need an interface that a user can interact with.You will need to write out the following methods still in the Store class so we can actually build an application.
         public void ViewItems()
         {
             // This method should log All of the items in the store to the screen
-            Console.WriteLine("Items in the {0} Store", Name);
+            Console.WriteLine($"\r\nItems in the {Name} Store");
             DisplayItemList(Items);
         }
         public void ViewCart()
         {
             // This method will log all the items in the cart and show the total price of the items in the cart
-            Console.WriteLine("Items in the Cart");
+            Console.WriteLine("\r\nItems in the Cart");
             DisplayItemList(cart);
         }
 
@@ -83,8 +82,7 @@ namespace BCW.ConsoleStore
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("{0,-10} {1,-40} {2,-10}", "Name", "Description", "Price");
             Console.ResetColor();
-            list.ForEach(item => Console.WriteLine("{0,-10} {1,-40} {2,-10:c}", item.Name, item.Description, item.Price));
-            Console.WriteLine();
+            list.ForEach(item => Console.WriteLine($"{item.Name,-10} {item.Description,-40} {item.Price,-10:c}"));
         }
     }
 }

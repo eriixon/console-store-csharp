@@ -27,8 +27,7 @@ namespace BCW.ConsoleStore.Front
         }
         public void BuyItem(Store store)
         {
-            Console.WriteLine("What do you like to buy. You have {0:c}", Budget);
-            Console.WriteLine();
+            Console.WriteLine($"What do you like to buy. You have {Budget:c}\r\n");
             var itemToBuy = store.GetItemByNameStore(Console.ReadLine().ToString().ToUpper());
             if (itemToBuy == null) Console.WriteLine("Sorry, we don't have it");
             else
@@ -43,8 +42,7 @@ namespace BCW.ConsoleStore.Front
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("\n***Sorry, you don't have enought money***");
-                    Console.WriteLine();
+                    Console.WriteLine("\n\r***Sorry, you don't have enought money***\n\r");
                     Console.ResetColor();
                 }
             }
@@ -52,9 +50,9 @@ namespace BCW.ConsoleStore.Front
 
         public void ReturnItem(Store store)
         {
-            Console.WriteLine("What do you like to return? You have {0}", Budget);
+            Console.WriteLine($"What do you like to return? You have {Budget}");
             var itemToReturn = store.GetItemByNameCart(Console.ReadLine().ToString().ToUpper());
-            if (itemToReturn == null) Console.WriteLine("Sorry, you don't have it");
+            if (itemToReturn == null) Console.WriteLine("\r\nSorry, you don't have it\r\n");
             else
             {
                 store.AddItemToStore(itemToReturn);

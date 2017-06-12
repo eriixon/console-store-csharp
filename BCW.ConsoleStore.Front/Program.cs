@@ -14,7 +14,7 @@ namespace BCW.ConsoleStore.Front
             bool running = true;
             while (running)
             {
-                StoreMenu();
+                Console.WriteLine("\r\nSo.. If you want to buy something - input 'buy', to return - input 'retun', or you want to leave - input 'quit'\r\n");
                 string choice = Console.ReadLine().ToString().ToUpper();
                 switch (choice)
                 {
@@ -38,12 +38,6 @@ namespace BCW.ConsoleStore.Front
                         break;
                 }
             }
-        }
-        public static void StoreMenu()
-        {
-            Console.WriteLine("What do you like to do?");
-            Console.WriteLine("If you want to buy something - input 'buy', to return - input 'retun', or you want to leave - input 'quit'");
-            Console.WriteLine();
         }
         public static void AddStoreItems(Store store)
         {
