@@ -47,6 +47,7 @@ namespace BCW.ConsoleStore.Front
             Console.WriteLine("If you want to buy something - input 'buy'");
             Console.WriteLine("If you want to return something - input 'retun'");
             Console.WriteLine("If you want to leave - input 'quit'");
+            Console.WriteLine();
         }
         public static void AddStoreItems(Store store)
         {

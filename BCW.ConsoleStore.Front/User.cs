@@ -20,11 +20,12 @@ namespace BCW.ConsoleStore.Front
         public void BuyItem(Store store)
         {
             Console.WriteLine("What do you like to buy. You have {0}", Budget);
+            Console.WriteLine();
             var itemToBuy = store.GetItemByNameStore(Console.ReadLine().ToString().ToUpper());
             if (itemToBuy == null) Console.WriteLine("Sorry, we don't have it");
             else
             {
-                if (itemToBuy.Price < Budget)
+                if (itemToBuy.Price <= Budget)
                 {
                     store.AddItemToCart(itemToBuy);
                     store.RemoveItemFromStore(itemToBuy);
