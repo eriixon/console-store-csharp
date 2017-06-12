@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,11 +16,23 @@ namespace BCW.ConsoleStore.Front
             Console.WriteLine("What is your name?");
             Name = Console.ReadLine().ToString();
             Console.WriteLine("What is your budget?");
-            Budget = Decimal.Parse(Console.ReadLine());
+            bool running = true;
+            while (running)
+            {
+                try
+                {
+                    Budget = Decimal.Parse(Console.ReadLine());
+                    running = false;
+                }
+                catch 
+                {
+                    Console.WriteLine("It should be a number");
+                }
+            }
         }
         public void BuyItem(Store store)
         {
-            Console.WriteLine("What do you like to buy. You have {0}", Budget);
+            Console.WriteLine("What do you like to buy. You have {0:c}", Budget);
             Console.WriteLine();
             var itemToBuy = store.GetItemByNameStore(Console.ReadLine().ToString().ToUpper());
             if (itemToBuy == null) Console.WriteLine("Sorry, we don't have it");

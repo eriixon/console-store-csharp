@@ -16,6 +16,7 @@ namespace BCW.ConsoleStore
             Name = name;
             Console.WriteLine("********************************");
             Console.WriteLine("Welcome {1} to {0} Store", Name, userName);
+            Console.WriteLine();
         }
         // This method will allow you to add an item to the List of Items
         public void AddItemToStore(Item item)
@@ -80,7 +81,11 @@ namespace BCW.ConsoleStore
 
         private void DisplayItemList (List<Item> list)
         {
-            list.ForEach(item => Console.WriteLine("Name: {0} , Description: {1}, Price: {2}", item.Name, item.Description, item.Price));
+            Console.WriteLine("------------------------------------");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("{0,-10} {1,-40} {2,-10}", "Name", "Description", "Price");
+            Console.ResetColor();
+            list.ForEach(item => Console.WriteLine("{0,-10} {1,-40} {2,-10:c}", item.Name, item.Description, item.Price));
             Console.WriteLine();
         }
     }
