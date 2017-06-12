@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BCW.ConsoleStore.Front
 {
-    class User
+    public class User
     {
         public string Name { get; set; }
         public decimal Budget { get; set; }
@@ -24,7 +19,7 @@ namespace BCW.ConsoleStore.Front
                     Budget = Decimal.Parse(Console.ReadLine());
                     running = false;
                 }
-                catch 
+                catch
                 {
                     Console.WriteLine("It should be a number");
                 }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BCW.ConsoleStore.Front
 {
@@ -51,11 +47,10 @@ namespace BCW.ConsoleStore.Front
         }
         public static void AddStoreItems(Store store)
         {
-            store.AddItemToStore(new Item("Gun", "10 mm semiato Zombi Punisher", 50));
+            store.AddItemToStore(new Item("Pistol", "10 mm semiato Zombi Punisher", 50));
             store.AddItemToStore(new Item("Shotgun", "12 Gauge Zombi Destroyer", 150));
             store.AddItemToStore(new Item("Rifle", "7.62x39mm Caliber Freedom Maker", 100));
             store.AddItemToStore(new Item("Axe", "Old Friend", 25));
         }
-
     }
 }

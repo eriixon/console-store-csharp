@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BCW.ConsoleStore
+﻿namespace BCW.ConsoleStore
 {
     public class Item
     {
@@ -23,6 +17,5 @@ namespace BCW.ConsoleStore
             Description = description;
             Price = price;
         }
-
     }
 }
