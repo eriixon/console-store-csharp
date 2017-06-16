@@ -40,10 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Item.cs" />
+    <Compile Include="Inventory.cs" />
+    <Compile Include="Store\Cart.cs" />
+    <Compile Include="Store\DisplayItems.cs" />
+    <Compile Include="Items\IITem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Store.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="Items\Protection.cs" />
+    <Compile Include="Store\Store.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="Items\Weapon.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
