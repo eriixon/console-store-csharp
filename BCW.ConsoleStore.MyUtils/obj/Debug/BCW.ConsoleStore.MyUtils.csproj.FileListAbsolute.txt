@@ -1,0 +1,7 @@
+E:\mpp\bcw\ConsoleStore\BCW.ConsoleStore.MyUtils\bin\Debug\BCW.ConsoleStore.MyUtils.dll
+E:\mpp\bcw\ConsoleStore\BCW.ConsoleStore.MyUtils\bin\Debug\BCW.ConsoleStore.MyUtils.pdb
+E:\mpp\bcw\ConsoleStore\BCW.ConsoleStore.MyUtils\bin\Debug\Newtonsoft.Json.dll
+E:\mpp\bcw\ConsoleStore\BCW.ConsoleStore.MyUtils\bin\Debug\Newtonsoft.Json.xml
+E:\mpp\bcw\ConsoleStore\BCW.ConsoleStore.MyUtils\obj\Debug\BCW.ConsoleStore.MyUtils.csprojResolveAssemblyReference.cache
+E:\mpp\bcw\ConsoleStore\BCW.ConsoleStore.MyUtils\obj\Debug\BCW.ConsoleStore.MyUtils.dll
+E:\mpp\bcw\ConsoleStore\BCW.ConsoleStore.MyUtils\obj\Debug\BCW.ConsoleStore.MyUtils.pdb
